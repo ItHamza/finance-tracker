@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'trackers#index'
+  root 'welcome#index'
+  get 'trackers/index'
 end
