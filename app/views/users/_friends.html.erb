@@ -3,20 +3,20 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th scope="col">Ticker</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
+          <th scope="col">Email</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <% @stock_track.each do |stock| %>
+        <% @friends.each do |f| %>
           <tr>
-            <th scope="row"><%= stock.ticker %></th>
-            <td><%= stock.name %></td>
-            <td><%= stock.last_price %></td>
+            <th scope="row"><%= f.email %></th>
+            <td><%= f.first_name %></td>
+            <td><%= f.last_name %></td>
             <td>
-              <%= link_to 'Remove ', user_stock_path(stock), method: :delete, data: {confirm: "Are you sure?"},
+              <%= link_to 'Unfollow ', '#', method: :delete, data: {confirm: "Are you sure?"},
                                             class: "btn btn-sm btn-warning" %>
             </td>
           </tr>
