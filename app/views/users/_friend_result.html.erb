@@ -1,0 +1,21 @@
+<div class="d-inline-block">
+  <%= render 'layouts/messages'%>
+</div>
+<% if @friends %>
+  <div class="card card-header d-inline-block mb-3">
+    <table class="col-md-12">
+      <tbody>
+        <% @friends.each do |item| %>
+          <tr>
+            <td><strong>Name: </strong><%= item.full_name%></td>
+            <td><strong>Email: </strong><%= item.email%></td>
+            <td><strong>Profile: </strong><%= link_to "View Profile", '#',
+                                          class: 'btn btn-sm btn-info'%>
+            <%= link_to 'Follow friend?', '#',
+                                            class: "btn btn-sm btn-success", method: :post %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
